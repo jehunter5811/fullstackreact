@@ -1,5 +1,8 @@
-module.exports = {
-  googleClientID: "561291313881-d8r1li9ej0tcj6fds2avqk8em2bk96e4.apps.googleusercontent.com",
-  googleClientSecret: "zmufiBSx6_JiNTJRccVkk1B3",
-  mongoURI: "mongodb://justin:password@ds129004.mlab.com:29004/coinocle-dev"
-};
+//keys.js
+if (process.env.NODE_ENV === "production") {
+  //in prod
+  module.exports = require("./prod");
+} else {
+  //return dev keys
+  module.exports = require("./dev");
+}
